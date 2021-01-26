@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EvaluatorRiscuri.Data;
 
 namespace EvaluatorRiscuri
 {
@@ -20,17 +21,25 @@ namespace EvaluatorRiscuri
     /// </summary>
     public partial class Shell : Window
     {
+        // View names
         public const string LOGIN_VIEW = "Login";
         public const string REGISTER_VIEW = "Register";
 
+        // Views
         private Dictionary<string, UserControl> views;
 
+        // Data
+        public UserDataManager UserData { get; set; } = new UserDataManager();
+
+        // Ctor
         public Shell()
         {
             InitializeComponent();
             InitializeViews();
         }
 
+
+        // Go to specified view
         public void GoTo(string viewName)
         {
             foreach (var view in views)

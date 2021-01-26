@@ -35,7 +35,7 @@ namespace EvaluatorRiscuri.Views
 
         private void Register_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            //_shell.UserData.
         }
     }
 }

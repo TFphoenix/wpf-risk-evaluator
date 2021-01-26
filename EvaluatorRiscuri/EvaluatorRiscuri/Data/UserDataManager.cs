@@ -11,7 +11,7 @@ using System.Text.Json.Serialization;
 
 namespace EvaluatorRiscuri.Data
 {
-    class UserDataManager : DataManager<User>
+    public sealed class UserDataManager : DataManager<User>
     {
         static UserDataManager()
         {
@@ -35,18 +35,6 @@ namespace EvaluatorRiscuri.Data
             if (null == user || user.Password != password) return false;
 
             return true;
-        }
-
-        protected override void Save()
-        {
-            var jsonString = JsonSerializer.Serialize(DataSet);
-            File.WriteAllText(JsonPath, jsonString);
-        }
-
-        protected override void Load()
-        {
-            var jsonString = File.ReadAllText(JsonPath);
-            DataSet = JsonSerializer.Deserialize<List<User>>(jsonString);
         }
     }
 }
