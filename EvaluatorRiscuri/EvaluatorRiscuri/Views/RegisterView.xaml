@@ -8,20 +8,20 @@
              d:DesignHeight="500" d:DesignWidth="350"
              MaxHeight="500" MaxWidth="350">
     <StackPanel Margin="40">
-        <Label HorizontalAlignment="Center" FontSize="24" Margin="0 0 0 40">Register your account</Label>
-        <Label>Name:</Label>
+        <Label HorizontalAlignment="Center" FontSize="24" Margin="0 0 0 40">Înregistrează-te!</Label>
+        <Label>Nume:</Label>
         <TextBox/>
         <Rectangle Height="20"/>
         <Label>Email:</Label>
         <TextBox/>
         <Rectangle Height="20"/>
-        <Label>Password:</Label>
+        <Label>Parolă:</Label>
         <PasswordBox/>
         <Rectangle Height="40"/>
         <WrapPanel HorizontalAlignment="Center">
-            <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Back_OnClick">Back</Button>
+            <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Back_OnClick">Înapoi</Button>
             <Rectangle Width="20"/>
-            <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Register_OnClick">Register</Button>
+            <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Register_OnClick">Înregistrare</Button>
         </WrapPanel>
     </StackPanel>
 </UserControl>

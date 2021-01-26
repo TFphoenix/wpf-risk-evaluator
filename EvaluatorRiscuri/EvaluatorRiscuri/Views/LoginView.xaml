@@ -12,13 +12,13 @@
         <Label>Email:</Label>
         <TextBox/>
         <Rectangle Height="20"/>
-        <Label>Password:</Label>
+        <Label>Parolă:</Label>
         <PasswordBox/>
         <Rectangle Height="40"/>
         <WrapPanel HorizontalAlignment="Center">
-            <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Login_OnClick">Login</Button>
+            <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Login_OnClick">Conectare</Button>
             <Rectangle Width="20"/>
-            <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Register_OnClick">Register</Button>
+            <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Register_OnClick">Înregistrare</Button>
         </WrapPanel>
     </StackPanel>
 </UserControl>
