@@ -25,6 +25,9 @@ namespace EvaluatorRiscuri
         public const string LOGIN_VIEW = "Login";
         public const string REGISTER_VIEW = "Register";
         public const string MENU_VIEW = "Menu";
+        public const string PROJECT_ADD_VIEW = "ProjectAdd";
+        public const string PROJECT_EVALUATE_VIEW = "ProjectEvaluate";
+        public const string PROJECT_DETAILS_VIEW = "ProjectDetails";
 
         // Views
         private Dictionary<string, UserControl> views;
@@ -36,8 +39,8 @@ namespace EvaluatorRiscuri
         public Shell()
         {
             InitializeComponent();
-            ResizeWindow(LOGIN_VIEW);
             InitializeViews();
+            GoTo(LOGIN_VIEW);
         }
 
 
@@ -64,17 +67,7 @@ namespace EvaluatorRiscuri
         // Syncronize window size
         private void ResizeWindow(string viewName)
         {
-            if (viewName.Equals(MENU_VIEW))
-            {
-                ResizeMode = ResizeMode.CanResize;
-
-                MinWidth = 800;
-                MinHeight = 500;
-
-                MaxWidth = double.PositiveInfinity;
-                MaxHeight = double.PositiveInfinity;
-            }
-            else
+            if (viewName.Equals(LOGIN_VIEW) || viewName.Equals(REGISTER_VIEW))
             {
                 ResizeMode = ResizeMode.NoResize;
 
@@ -83,6 +76,16 @@ namespace EvaluatorRiscuri
 
                 MaxWidth = 350;
                 MaxHeight = 500;
+            }
+            else
+            {
+                ResizeMode = ResizeMode.CanResize;
+
+                MinWidth = 800;
+                MinHeight = 500;
+
+                MaxWidth = double.PositiveInfinity;
+                MaxHeight = double.PositiveInfinity;
             }
         }
 
@@ -93,7 +96,10 @@ namespace EvaluatorRiscuri
             {
                 {LOGIN_VIEW, LoginView },
                 {REGISTER_VIEW, RegisterView},
-                {MENU_VIEW, MenuView}
+                {MENU_VIEW, MenuView},
+                {PROJECT_ADD_VIEW, ProjectAddView},
+                {PROJECT_EVALUATE_VIEW, ProjectEvaluateView},
+                {PROJECT_DETAILS_VIEW, ProjectDetailsView}
             };
         }
     }
