@@ -66,13 +66,16 @@
 
             <!--Project Form-->
             <StackPanel Grid.Row="1" HorizontalAlignment="Center" Width="400">
+                <Label x:Name="ErrorLabel" HorizontalAlignment="Center" FontSize="12" Foreground="DarkRed" FontWeight="Bold" Visibility="Hidden">Eroare: Câmpurile trebuie completate</Label>
                 <TextBox
-                    materialDesign:HintAssist.Hint="Nume"
+                    x:Name="NameTextBox"
+                    materialDesign:HintAssist.Hint="Nume*"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                     FontSize="20"
                     VerticalAlignment="Center" />
                 <Rectangle Height="40"/>
                 <TextBox
+                    x:Name="DescriptionTextBox"
                     Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                     VerticalAlignment="Top"
                     FontSize="20"
@@ -80,7 +83,7 @@
                     AcceptsReturn="True"
                     TextWrapping="Wrap"
                     VerticalScrollBarVisibility="Auto"
-                    materialDesign:HintAssist.Hint="Descriere"/>
+                    materialDesign:HintAssist.Hint="Descriere*"/>
             </StackPanel>
 
         </Grid>

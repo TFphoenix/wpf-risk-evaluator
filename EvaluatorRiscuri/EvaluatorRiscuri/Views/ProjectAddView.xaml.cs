@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EvaluatorRiscuri.Models;
 
 namespace EvaluatorRiscuri.Views
 {
@@ -30,7 +31,29 @@ namespace EvaluatorRiscuri.Views
 
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            // Validate input
+            if (string.IsNullOrEmpty(NameTextBox.Text) || string.IsNullOrEmpty(DescriptionTextBox.Text))
+            {
+                ErrorLabel.Visibility = Visibility.Visible;
+                return;
+            }
+
+            // Add project
+            _shell.ProjectData.Add(new Project
+            {
+                CreatedDate = DateTime.Now.ToString("dd/mm/yyyy"),
+                Name = NameTextBox.Text,
+                Description = DescriptionTextBox.Text,
+                ProjectManager = _shell.UserData.ConnectedUser.Id
+            });
+
+            // Clear values
+            ErrorLabel.Visibility = Visibility.Hidden;
+            NameTextBox.Clear();
+            DescriptionTextBox.Clear();
+
+            // Go to menu
+            _shell.GoTo(Shell.MENU_VIEW);
         }
 
         private void Back_OnClick(object sender, RoutedEventArgs e)
