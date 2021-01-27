@@ -11,5 +11,6 @@ namespace EvaluatorRiscuri.Models
         public string Name { get; set; }
         public int ProjectManager { get; set; }
         public string CreatedDate { get; set; }
+        public string Description { get; set; }
     }
 }

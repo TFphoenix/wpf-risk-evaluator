@@ -20,9 +20,22 @@ namespace EvaluatorRiscuri.Views
     /// </summary>
     public partial class ProjectAddView : UserControl
     {
+        private readonly Shell _shell;
+
         public ProjectAddView()
         {
             InitializeComponent();
+            _shell = (Shell)Application.Current.MainWindow;
+        }
+
+        private void Add_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Back_OnClick(object sender, RoutedEventArgs e)
+        {
+            _shell.GoTo(Shell.MENU_VIEW);
         }
     }
 }
