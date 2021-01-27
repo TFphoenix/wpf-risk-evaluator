@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EvaluatorRiscuri.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -35,9 +36,9 @@
 
             <!--Logout Button-->
             <WrapPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="Logout_OnClick" VerticalAlignment="Center" Width="150">
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" HorizontalAlignment="Left" Height="35" ToolTip="Deconectare">
                     <WrapPanel>
-                        <Image Source="../Resources/logout.png" Width="15" Margin="0 0 5 0"/>
+                        <materialDesign:PackIcon Kind="ExitToApp" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
                         <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Deconectare</Label>
                     </WrapPanel>
                 </Button>
@@ -47,7 +48,54 @@
         <!--Content-->
         <Rectangle Grid.Row="1" Fill="{DynamicResource MaterialDesignLightBackground}"/>
         <StackPanel Grid.Row="1" Margin="20">
-            <Label>Proiectele tale:</Label>
+            <!--Top Bar-->
+            <Grid Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock VerticalAlignment="Center" Grid.Column="0" Style="{StaticResource MaterialDesignHeadline6TextBlock}">Proiectele tale:</TextBlock>
+                <Button Grid.Column="2" Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Left" Height="35" ToolTip="Adaugă proiect">
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="FilePlus" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Adaugă proiect</Label>
+                    </WrapPanel>
+                </Button>
+            </Grid>
+
+            <!--Projects List-->
+            <materialDesign:Card Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Padding="0" Margin="0 10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Margin="16 16 16 4" Style="{StaticResource MaterialDesignHeadline5TextBlock}">
+                        Proiectul meu super important
+                    </TextBlock>
+                    <TextBlock Grid.Row="2" Margin="16 0 16 8" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignBody2TextBlock}">
+                        19 Martie, 2016
+                    </TextBlock>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="16 0 16 8" HorizontalAlignment="Right">
+                        <Button Style="{StaticResource MaterialDesignRaisedLightButton}" HorizontalAlignment="Left" Margin="8 4 8 8" Height="35" ToolTip="Evaluează">
+                            <WrapPanel>
+                                <materialDesign:PackIcon Kind="StarPlus" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                                <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluează</Label>
+                            </WrapPanel>
+                        </Button>
+                        <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" HorizontalAlignment="Left" Margin="8 4 8 8" Height="35" ToolTip="Șterge">
+                            <WrapPanel>
+                                <materialDesign:PackIcon Kind="TrashCan" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                                <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Șterge</Label>
+                            </WrapPanel>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:Card>
         </StackPanel>
     </Grid>
 </UserControl>

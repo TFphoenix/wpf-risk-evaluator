@@ -69,7 +69,7 @@ namespace EvaluatorRiscuri
                 ResizeMode = ResizeMode.CanResize;
 
                 MinWidth = 800;
-                MinHeight = 450;
+                MinHeight = 500;
 
                 MaxWidth = double.PositiveInfinity;
                 MaxHeight = double.PositiveInfinity;
