@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:EvaluatorRiscuri"
         mc:Ignorable="d"
         Title="Evaluator Riscuri"
-        Height="Auto" Width="Auto" SizeToContent="WidthAndHeight">
+        Height="Auto" Width="Auto">
     <Grid>
         <views:LoginView x:Name="LoginView" IsEnabled="True" Visibility="Visible"/>
         <views:RegisterView x:Name="RegisterView" IsEnabled="False" Visibility="Hidden"/>

@@ -47,9 +47,14 @@
 
         <!--Content-->
         <Rectangle Grid.Row="1" Fill="{DynamicResource MaterialDesignLightBackground}"/>
-        <StackPanel Grid.Row="1" Margin="20">
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
             <!--Top Bar-->
-            <Grid Margin="0 0 0 10">
+            <Grid Grid.Row="0" Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
@@ -65,8 +70,8 @@
                 </Button>
             </Grid>
 
-            <!--Projects List-->
-            <materialDesign:Card Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Padding="0" Margin="0 10">
+            <!--Card concept-->
+            <!--<materialDesign:Card Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Padding="0" Margin="0 10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -95,7 +100,67 @@
                         </Button>
                     </StackPanel>
                 </Grid>
-            </materialDesign:Card>
-        </StackPanel>
+            </materialDesign:Card>-->
+
+            <!--Projects List-->
+            <Border Grid.Row="1">
+                <ListView x:Name="ProjectsList" SelectionMode="Single" Background="Transparent" Width="Auto">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel CanHorizontallyScroll="False" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <materialDesign:Card Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Padding="0" Margin="10">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <!--Info-->
+                                    <TextBlock Grid.Row="0" Margin="16 16 16 4" Style="{StaticResource MaterialDesignHeadline5TextBlock}">
+                        Proiectul meu super important
+                                    </TextBlock>
+                                    <TextBlock Grid.Row="2" Margin="16 0 16 8" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignBody2TextBlock}">
+                        19 Martie, 2016
+                                    </TextBlock>
+
+                                    <!--Buttons-->
+                                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="16 0 16 8" HorizontalAlignment="Right">
+                                        <Button Style="{StaticResource MaterialDesignRaisedLightButton}" HorizontalAlignment="Left" Margin="8 4 8 8" Height="35" ToolTip="Evaluează">
+                                            <WrapPanel>
+                                                <materialDesign:PackIcon Kind="StarPlus" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                                                <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluează</Label>
+                                            </WrapPanel>
+                                        </Button>
+                                        <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" HorizontalAlignment="Left" Margin="8 4 8 8" Height="35" ToolTip="Șterge">
+                                            <WrapPanel>
+                                                <materialDesign:PackIcon Kind="TrashCan" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                                                <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Șterge</Label>
+                                            </WrapPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                            </materialDesign:Card>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

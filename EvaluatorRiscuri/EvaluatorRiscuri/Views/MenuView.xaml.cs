@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EvaluatorRiscuri.Models;
 
 namespace EvaluatorRiscuri.Views
 {
@@ -35,6 +36,20 @@ namespace EvaluatorRiscuri.Views
             if (true == (bool)e.NewValue)
             {
                 UserNameLabel.Content = _shell.UserData.ConnectedUser.Name;
+                ProjectsList.ItemsSource = new List<Project>
+                {
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
+                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1}
+                };
             }
             // On disappearing
             else
