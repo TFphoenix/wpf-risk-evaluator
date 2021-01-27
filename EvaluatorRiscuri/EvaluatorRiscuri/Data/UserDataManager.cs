@@ -44,5 +44,10 @@ namespace EvaluatorRiscuri.Data
             Add(user);
             return true;
         }
+
+        public void LogoutUser()
+        {
+            ConnectedUser = null;
+        }
     }
 }

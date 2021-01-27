@@ -36,21 +36,7 @@ namespace EvaluatorRiscuri.Views
             if (true == (bool)e.NewValue)
             {
                 UserNameLabel.Content = _shell.UserData.ConnectedUser.Name;
-                ProjectsList.ItemsSource = new List<Project>
-                {
-                    // TODO: Populate projects from UserData
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
-                    new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1}
-                };
+                ProjectsList.ItemsSource = _shell.ProjectData.GetUserProjects(_shell.UserData.ConnectedUser.Id);
             }
             // On disappearing
             else
@@ -62,7 +48,13 @@ namespace EvaluatorRiscuri.Views
 
         private void Logout_OnClick(object sender, RoutedEventArgs e)
         {
+            _shell.UserData.LogoutUser();
             _shell.GoTo(Shell.LOGIN_VIEW);
+        }
+
+        private void AddProject_OnClick(object sender, RoutedEventArgs e)
+        {
+            _shell.GoTo(Shell.PROJECT_ADD_VIEW);
         }
 
         private void EvaluateProject_OnClick(object sender, RoutedEventArgs e)

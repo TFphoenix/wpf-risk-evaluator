@@ -33,7 +33,8 @@ namespace EvaluatorRiscuri
         private Dictionary<string, UserControl> views;
 
         // Data
-        public UserDataManager UserData { get; set; } = new UserDataManager();
+        public UserDataManager UserData { get; } = new UserDataManager();
+        public ProjectDataManager ProjectData { get; } = new ProjectDataManager();
 
         // Ctor
         public Shell()

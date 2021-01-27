@@ -15,9 +15,9 @@ namespace EvaluatorRiscuri.Data
             JsonPath = Path.Combine(Environment.CurrentDirectory, @"Data\JSONs\", "project.json");
         }
 
-        public override Project GetById(int id)
+        public List<Project> GetUserProjects(int userId)
         {
-            throw new NotImplementedException();
+            return DataSet.FindAll(p => p.ProjectManager == userId);
         }
     }
 }

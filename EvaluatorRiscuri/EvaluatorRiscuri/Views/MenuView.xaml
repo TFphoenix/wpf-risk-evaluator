@@ -62,7 +62,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock VerticalAlignment="Center" Grid.Column="0" Style="{StaticResource MaterialDesignHeadline6TextBlock}">Proiectele tale:</TextBlock>
-                <Button Grid.Column="2" Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Left" Height="35" ToolTip="Adaugă proiect">
+                <Button Click="AddProject_OnClick" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Left" Height="35" ToolTip="Adaugă proiect">
                     <WrapPanel>
                         <materialDesign:PackIcon Kind="FilePlus" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
                         <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Adaugă proiect</Label>
