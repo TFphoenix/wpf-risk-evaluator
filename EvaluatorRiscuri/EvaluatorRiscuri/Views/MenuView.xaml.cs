@@ -26,6 +26,21 @@ namespace EvaluatorRiscuri.Views
         {
             InitializeComponent();
             _shell = (Shell)Application.Current.MainWindow;
+            IsVisibleChanged += MenuView_IsVisibleChanged;
+        }
+
+        private void MenuView_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            // On appearing
+            if (true == (bool)e.NewValue)
+            {
+                UserNameLabel.Content = _shell.UserData.ConnectedUser.Name;
+            }
+            // On disappearing
+            else
+            {
+
+            }
         }
 
         private void Logout_OnClick(object sender, RoutedEventArgs e)

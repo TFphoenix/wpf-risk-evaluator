@@ -46,7 +46,16 @@ namespace EvaluatorRiscuri
         {
             foreach (var view in views)
             {
-                view.Value.Visibility = view.Key.Equals(viewName) ? Visibility.Visible : Visibility.Hidden;
+                if (view.Key.Equals(viewName))
+                {
+                    view.Value.Visibility = Visibility.Visible;
+                    view.Value.IsEnabled = true;
+                }
+                else
+                {
+                    view.Value.Visibility = Visibility.Hidden;
+                    view.Value.IsEnabled = false;
+                }
             }
 
             ResizeWindow(viewName);

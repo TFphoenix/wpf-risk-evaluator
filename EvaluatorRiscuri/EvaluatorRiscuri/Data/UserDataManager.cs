@@ -13,6 +13,8 @@ namespace EvaluatorRiscuri.Data
 {
     public sealed class UserDataManager : DataManager<User>
     {
+        public User ConnectedUser { get; private set; }
+
         static UserDataManager()
         {
             JsonPath = Path.Combine(Environment.CurrentDirectory, @"Data\JSONs\", "user.json");
@@ -29,6 +31,7 @@ namespace EvaluatorRiscuri.Data
 
             if (null == user || user.Password != password) return false;
 
+            ConnectedUser = user;
             return true;
         }
 

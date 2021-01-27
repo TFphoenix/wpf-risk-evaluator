@@ -9,8 +9,8 @@
         Title="Evaluator Riscuri"
         Height="Auto" Width="Auto" SizeToContent="WidthAndHeight">
     <Grid>
-        <views:LoginView x:Name="LoginView" Visibility="Visible"/>
-        <views:RegisterView x:Name="RegisterView" Visibility="Hidden"/>
-        <views:MenuView x:Name="MenuView" Visibility="Hidden"/>
+        <views:LoginView x:Name="LoginView" IsEnabled="True" Visibility="Visible"/>
+        <views:RegisterView x:Name="RegisterView" IsEnabled="False" Visibility="Hidden"/>
+        <views:MenuView x:Name="MenuView" IsEnabled="False" Visibility="Hidden"/>
     </Grid>
 </Window>

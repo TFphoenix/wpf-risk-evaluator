@@ -8,12 +8,12 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--Header-->
-        <Rectangle Grid.Row="0" Fill="{DynamicResource MaterialDesignLightBackground}"/>
+        <Rectangle Grid.Row="0" Fill="#BDC0EC"/>
         <Grid Grid.Row="0" Margin="10 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -27,9 +27,15 @@
                 <Label VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0" Foreground="{DynamicResource MaterialDesignLightForeground}" FontSize="15" FontWeight="Bold">Evaluator Riscuri</Label>
             </WrapPanel>
 
+            <!--User-->
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                <Label HorizontalAlignment="Center">Bine ai venit</Label>
+                <Label x:Name="UserNameLabel" FontWeight="Bold" HorizontalAlignment="Center" FontSize="15"/>
+            </StackPanel>
+
             <!--Logout Button-->
             <WrapPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="Logout_OnClick" Width="150">
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="Logout_OnClick" VerticalAlignment="Center" Width="150">
                     <WrapPanel>
                         <Image Source="../Resources/logout.png" Width="15" Margin="0 0 5 0"/>
                         <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Deconectare</Label>
@@ -40,8 +46,8 @@
 
         <!--Content-->
         <Rectangle Grid.Row="1" Fill="{DynamicResource MaterialDesignLightBackground}"/>
-        <StackPanel Grid.Row="1" Margin="10">
-            <Button>Test</Button>
+        <StackPanel Grid.Row="1" Margin="20">
+            <Label>Proiectele tale:</Label>
         </StackPanel>
     </Grid>
 </UserControl>
