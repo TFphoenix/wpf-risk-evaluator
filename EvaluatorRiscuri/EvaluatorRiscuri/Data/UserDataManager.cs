@@ -18,14 +18,9 @@ namespace EvaluatorRiscuri.Data
             JsonPath = Path.Combine(Environment.CurrentDirectory, @"Data\JSONs\", "user.json");
         }
 
-        public override User GetById(int id)
-        {
-            return DataSet.First(u => u.Id == id);
-        }
-
         public User GetByEmail(string email)
         {
-            return DataSet.First(u => u.Email == email);
+            return DataSet.FirstOrDefault(u => u.Email == email);
         }
 
         public bool LoginUser(string email, string password)
@@ -34,6 +29,16 @@ namespace EvaluatorRiscuri.Data
 
             if (null == user || user.Password != password) return false;
 
+            return true;
+        }
+
+        public bool RegisterUser(User user)
+        {
+            User sameEmailUser = GetByEmail(user.Email);
+
+            if (null != sameEmailUser) return false;
+
+            Add(user);
             return true;
         }
     }

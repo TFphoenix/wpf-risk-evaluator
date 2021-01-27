@@ -9,14 +9,15 @@
              MaxHeight="500" MaxWidth="350">
     <StackPanel Margin="40">
         <Label HorizontalAlignment="Center" FontSize="24" Margin="0 0 0 40">Înregistrează-te!</Label>
+        <Label x:Name="ErrorLabel" HorizontalAlignment="Center" FontSize="12" Foreground="DarkRed" FontWeight="Bold" Visibility="Hidden">Eroare: Adresa de Email există deja</Label>
         <Label>Nume:</Label>
-        <TextBox/>
+        <TextBox x:Name="NameTextBox"/>
         <Rectangle Height="20"/>
         <Label>Email:</Label>
-        <TextBox/>
+        <TextBox x:Name="EmailTextBox"/>
         <Rectangle Height="20"/>
         <Label>Parolă:</Label>
-        <PasswordBox/>
+        <PasswordBox x:Name="PasswordBox"/>
         <Rectangle Height="40"/>
         <WrapPanel HorizontalAlignment="Center">
             <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Back_OnClick">Înapoi</Button>

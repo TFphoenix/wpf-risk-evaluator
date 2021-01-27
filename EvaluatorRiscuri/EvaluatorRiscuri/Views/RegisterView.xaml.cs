@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EvaluatorRiscuri.Models;
 
 namespace EvaluatorRiscuri.Views
 {
@@ -35,7 +36,26 @@ namespace EvaluatorRiscuri.Views
 
         private void Register_OnClick(object sender, RoutedEventArgs e)
         {
-            //_shell.UserData.
+            bool registerResult = _shell.UserData.RegisterUser(new User
+            {
+                Email = EmailTextBox.Text,
+                Name = NameTextBox.Text,
+                Password = PasswordBox.Password
+            });
+
+            if (registerResult)
+            {
+                EmailTextBox.Clear();
+                NameTextBox.Clear();
+                PasswordBox.Clear();
+
+                _shell.LoginView.SuccessLabel.Visibility = Visibility.Visible;
+                _shell.GoTo(Shell.LOGIN_VIEW);
+            }
+            else
+            {
+                ErrorLabel.Visibility = Visibility.Visible;
+            }
         }
     }
 }

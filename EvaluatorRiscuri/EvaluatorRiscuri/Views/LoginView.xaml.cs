@@ -30,11 +30,29 @@ namespace EvaluatorRiscuri.Views
 
         private void Login_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            bool loginResult = _shell.UserData.LoginUser(EmailTextBox.Text, PasswordBox.Password);
+
+            if (loginResult)
+            {
+                ErrorLabel.Visibility = Visibility.Hidden;
+
+                EmailTextBox.Clear();
+                PasswordBox.Clear();
+
+                _shell.GoTo(Shell.MENU_VIEW);
+            }
+            else
+            {
+                ErrorLabel.Visibility = Visibility.Visible;
+            }
         }
 
         private void Register_OnClick(object sender, RoutedEventArgs e)
         {
+            SuccessLabel.Visibility = Visibility.Hidden;
+            ErrorLabel.Visibility = Visibility.Hidden;
+            _shell.RegisterView.ErrorLabel.Visibility = Visibility.Hidden;
+
             _shell.GoTo(Shell.REGISTER_VIEW);
         }
     }

@@ -9,11 +9,13 @@
              MaxHeight="500" MaxWidth="350">
     <StackPanel Margin="40">
         <Image Source="../Resources/logo.png" Width="100" Margin="0 20"/>
+        <Label x:Name="SuccessLabel" HorizontalAlignment="Center" FontSize="12" Foreground="DarkGreen" FontWeight="Bold" Visibility="Hidden">Cont creat cu succes!</Label>
+        <Label x:Name="ErrorLabel" HorizontalAlignment="Center" FontSize="12" Foreground="DarkRed" FontWeight="Bold" Visibility="Hidden">Eroare: Email sau parolă greșită</Label>
         <Label>Email:</Label>
-        <TextBox/>
+        <TextBox x:Name="EmailTextBox"/>
         <Rectangle Height="20"/>
         <Label>Parolă:</Label>
-        <PasswordBox/>
+        <PasswordBox x:Name="PasswordBox"/>
         <Rectangle Height="40"/>
         <WrapPanel HorizontalAlignment="Center">
             <Button Foreground="{DynamicResource MaterialDesignDarkForeground}" Click="Login_OnClick">Conectare</Button>

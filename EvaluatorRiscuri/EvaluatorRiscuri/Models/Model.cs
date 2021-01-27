@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace EvaluatorRiscuri.Models
 {
-    public class Project : Model
+    public abstract class Model
     {
-        public string Name { get; set; }
-        public int ProjectManager { get; set; }
-        public string CreatedDate { get; set; }
+        public int Id { get; set; }
     }
 }

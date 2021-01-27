@@ -24,6 +24,7 @@ namespace EvaluatorRiscuri
         // View names
         public const string LOGIN_VIEW = "Login";
         public const string REGISTER_VIEW = "Register";
+        public const string MENU_VIEW = "Menu";
 
         // Views
         private Dictionary<string, UserControl> views;
@@ -35,6 +36,7 @@ namespace EvaluatorRiscuri
         public Shell()
         {
             InitializeComponent();
+            ResizeWindow(LOGIN_VIEW);
             InitializeViews();
         }
 
@@ -46,14 +48,43 @@ namespace EvaluatorRiscuri
             {
                 view.Value.Visibility = view.Key.Equals(viewName) ? Visibility.Visible : Visibility.Hidden;
             }
+
+            ResizeWindow(viewName);
         }
 
+        // Syncronize window size
+        private void ResizeWindow(string viewName)
+        {
+            if (viewName.Equals(MENU_VIEW))
+            {
+                ResizeMode = ResizeMode.CanResize;
+
+                MinWidth = 800;
+                MinHeight = 450;
+
+                MaxWidth = double.PositiveInfinity;
+                MaxHeight = double.PositiveInfinity;
+            }
+            else
+            {
+                ResizeMode = ResizeMode.NoResize;
+
+                MinWidth = 350;
+                MinHeight = 500;
+
+                MaxWidth = 350;
+                MaxHeight = 500;
+            }
+        }
+
+        // populate view routings
         private void InitializeViews()
         {
             views = new Dictionary<string, UserControl>
             {
                 {LOGIN_VIEW, LoginView },
-                {REGISTER_VIEW, RegisterView}
+                {REGISTER_VIEW, RegisterView},
+                {MENU_VIEW, MenuView}
             };
         }
     }
