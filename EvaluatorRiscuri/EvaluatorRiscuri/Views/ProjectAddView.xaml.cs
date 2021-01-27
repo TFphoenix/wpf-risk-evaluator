@@ -41,7 +41,7 @@ namespace EvaluatorRiscuri.Views
             // Add project
             _shell.ProjectData.Add(new Project
             {
-                CreatedDate = DateTime.Now.ToString("dd/mm/yyyy"),
+                CreatedDate = DateTime.Now.ToString("dd/MM/yyyy"),
                 Name = NameTextBox.Text,
                 Description = DescriptionTextBox.Text,
                 ProjectManager = _shell.UserData.ConnectedUser.Id

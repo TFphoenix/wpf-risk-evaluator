@@ -69,6 +69,8 @@ namespace EvaluatorRiscuri.Views
             var project = ((FrameworkElement)sender).DataContext as Project;
 
             // TODO: Delete selected project
+            _shell.ProjectData.Delete(project);
+            ProjectsList.ItemsSource = _shell.ProjectData.GetUserProjects(_shell.UserData.ConnectedUser.Id);
         }
     }
 }

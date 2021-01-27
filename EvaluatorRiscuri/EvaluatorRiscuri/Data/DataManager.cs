@@ -30,6 +30,12 @@ namespace EvaluatorRiscuri.Data
             Save();
         }
 
+        public virtual void Delete(T entity)
+        {
+            DataSet.Remove(entity);
+            Save();
+        }
+
         private void Save()
         {
             var jsonString = JsonSerializer.Serialize(DataSet);
@@ -40,7 +46,7 @@ namespace EvaluatorRiscuri.Data
         {
             var jsonString = File.ReadAllText(JsonPath);
             DataSet = JsonSerializer.Deserialize<List<T>>(jsonString);
-            NextId = DataSet.Count;
+            NextId = DataSet.Count == 0 ? 0 : DataSet[DataSet.Count - 1].Id + 1;
         }
     }
 }
