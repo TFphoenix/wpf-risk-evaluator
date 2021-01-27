@@ -38,6 +38,7 @@ namespace EvaluatorRiscuri.Views
                 UserNameLabel.Content = _shell.UserData.ConnectedUser.Name;
                 ProjectsList.ItemsSource = new List<Project>
                 {
+                    // TODO: Populate projects from UserData
                     new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
                     new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
                     new Project {CreatedDate = "27/01/2021", Id = 0, Name = "My First Project", ProjectManager = 1},
@@ -54,13 +55,28 @@ namespace EvaluatorRiscuri.Views
             // On disappearing
             else
             {
-
+                UserNameLabel.Content = "";
+                ProjectsList.ItemsSource = new List<Project>();
             }
         }
 
         private void Logout_OnClick(object sender, RoutedEventArgs e)
         {
             _shell.GoTo(Shell.LOGIN_VIEW);
+        }
+
+        private void EvaluateProject_OnClick(object sender, RoutedEventArgs e)
+        {
+            var project = ((FrameworkElement)sender).DataContext as Project;
+
+            // TODO: Evaluate selected project
+        }
+
+        private void DeleteProject_OnClick(object sender, RoutedEventArgs e)
+        {
+            var project = ((FrameworkElement)sender).DataContext as Project;
+
+            // TODO: Delete selected project
         }
     }
 }
