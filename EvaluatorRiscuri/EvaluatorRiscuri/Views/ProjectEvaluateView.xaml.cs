@@ -20,9 +20,31 @@ namespace EvaluatorRiscuri.Views
     /// </summary>
     public partial class ProjectEvaluateView : UserControl
     {
+        private readonly Shell _shell;
+
         public ProjectEvaluateView()
         {
             InitializeComponent();
+            _shell = (Shell)Application.Current.MainWindow;
+            IsVisibleChanged += MenuView_IsVisibleChanged;
+        }
+
+        private void MenuView_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            // On appearing
+            if (true == (bool)e.NewValue)
+            {
+                // TODO: populate data
+            }
+            // On disappearing
+            else
+            {
+            }
+        }
+
+        private void Back_OnClick(object sender, RoutedEventArgs e)
+        {
+            _shell.GoTo(Shell.MENU_VIEW);
         }
     }
 }

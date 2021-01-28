@@ -94,6 +94,12 @@
 
                                     <!--Buttons-->
                                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="16 0 16 8" HorizontalAlignment="Right">
+                                        <Button Click="DetailsProject_OnClick" Style="{StaticResource MaterialDesignRaisedLightButton}" HorizontalAlignment="Left" Margin="8 4 8 8" Height="35" ToolTip="Detalii">
+                                            <WrapPanel>
+                                                <materialDesign:PackIcon Kind="InformationOutline" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                                                <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Detalii</Label>
+                                            </WrapPanel>
+                                        </Button>
                                         <Button Click="EvaluateProject_OnClick" Style="{StaticResource MaterialDesignRaisedLightButton}" HorizontalAlignment="Left" Margin="8 4 8 8" Height="35" ToolTip="Evaluează">
                                             <WrapPanel>
                                                 <materialDesign:PackIcon Kind="StarPlus" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>

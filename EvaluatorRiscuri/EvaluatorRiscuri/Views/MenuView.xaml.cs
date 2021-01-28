@@ -57,18 +57,26 @@ namespace EvaluatorRiscuri.Views
             _shell.GoTo(Shell.PROJECT_ADD_VIEW);
         }
 
+        private void DetailsProject_OnClick(object sender, RoutedEventArgs e)
+        {
+            var project = ((FrameworkElement)sender).DataContext as Project;
+
+            _shell.ProjectData.SelectedProject = project;
+            _shell.GoTo(Shell.PROJECT_DETAILS_VIEW);
+        }
+
         private void EvaluateProject_OnClick(object sender, RoutedEventArgs e)
         {
             var project = ((FrameworkElement)sender).DataContext as Project;
 
-            // TODO: Evaluate selected project
+            _shell.ProjectData.SelectedProject = project;
+            _shell.GoTo(Shell.PROJECT_EVALUATE_VIEW);
         }
 
         private void DeleteProject_OnClick(object sender, RoutedEventArgs e)
         {
             var project = ((FrameworkElement)sender).DataContext as Project;
 
-            // TODO: Delete selected project
             _shell.ProjectData.Delete(project);
             ProjectsList.ItemsSource = _shell.ProjectData.GetUserProjects(_shell.UserData.ConnectedUser.Id);
         }

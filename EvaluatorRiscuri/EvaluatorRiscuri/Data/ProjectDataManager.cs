@@ -10,6 +10,8 @@ namespace EvaluatorRiscuri.Data
 {
     public sealed class ProjectDataManager : DataManager<Project>
     {
+        public Project SelectedProject { get; set; }
+
         static ProjectDataManager()
         {
             JsonPath = Path.Combine(Environment.CurrentDirectory, @"Data\JSONs\", "project.json");

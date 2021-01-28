@@ -4,9 +4,69 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EvaluatorRiscuri.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
+
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Rectangle Grid.Row="0" Fill="#BDC0EC"/>
+        <Grid Grid.Row="0" Margin="10 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="250" />
+            </Grid.ColumnDefinitions>
+
+            <!--Logo-->
+            <WrapPanel Grid.Column="0">
+                <Image Source="../Resources/logo.png" VerticalAlignment="Center" Width="40" Height="40" Margin="5"/>
+                <Label VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0" Foreground="{DynamicResource MaterialDesignLightForeground}" FontSize="20" FontWeight="Bold">Evaluator Riscuri</Label>
+            </WrapPanel>
+
+            <!--Logout Button-->
+            <WrapPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button Click="Back_OnClick" Style="{StaticResource MaterialDesignRaisedAccentButton}" HorizontalAlignment="Left" Height="35" ToolTip="Înapoi">
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="ArrowLeft" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Înapoi</Label>
+                    </WrapPanel>
+                </Button>
+            </WrapPanel>
+        </Grid>
+
+        <!--Content-->
+        <Rectangle Grid.Row="1" Fill="{DynamicResource MaterialDesignLightBackground}"/>
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <!--Top Bar-->
+            <Grid Grid.Row="0" Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock VerticalAlignment="Center" Grid.Column="0" Style="{StaticResource MaterialDesignHeadline6TextBlock}">Evaluează proiect</TextBlock>
+                <Button Grid.Column="2" Style="{StaticResource MaterialDesignRaisedButton}" Margin="10 0 0 0" HorizontalAlignment="Left" Height="35" ToolTip="Adaugă">
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="Plus" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Adaugă</Label>
+                    </WrapPanel>
+                </Button>
+            </Grid>
+
+            <!--TODO: Evaluate Project Form-->
+
+        </Grid>
     </Grid>
 </UserControl>
