@@ -34,7 +34,22 @@ namespace EvaluatorRiscuri.Views
             // On appearing
             if (true == (bool)e.NewValue)
             {
-                // TODO: populate fields
+                // Get project
+                var project = _shell.ProjectData.SelectedProject;
+
+                // General info
+                NameTextBox.Text = project.Name;
+                CreatedDateTextBox.Text = project.CreatedDate;
+                DescriptionTextBox.Text = project.Description;
+
+                // Evaluated info
+                EvaluatedDateTextBox.Text = string.IsNullOrEmpty(project.LastEvaluatedDate) ? "N/A" : project.LastEvaluatedDate;
+                DataOperationsRiskScoreTextBox.Text = project.DataOperationsRiskScore == 0 ? "N/A" : project.DataOperationsRiskScore.ToString();
+                ApplicationsSystemCreationRiskScoreTextBox.Text = project.ApplicationsSystemCreationRiskScore == 0 ? "N/A" : project.ApplicationsSystemCreationRiskScore.ToString();
+                ApplicationsSystemDevelopmentRiskScoreTextBox.Text = project.ApplicationsSystemDevelopmentRiskScore == 0 ? "N/A" : project.ApplicationsSystemDevelopmentRiskScore.ToString();
+                HumanMaterialsResourcesRiskScoreTextBox.Text = project.HumanMaterialsResourcesRiskScore == 0 ? "N/A" : project.HumanMaterialsResourcesRiskScore.ToString();
+                SoftwareAcquisitionRiskScoreTextBox.Text = project.SoftwareAcquisitionRiskScore == 0 ? "N/A" : project.SoftwareAcquisitionRiskScore.ToString();
+                OtherFunctionsRiskScoreTextBox.Text = project.OtherFunctionsRiskScore == 0 ? "N/A" : project.OtherFunctionsRiskScore.ToString();
             }
             // On disappearing
             else

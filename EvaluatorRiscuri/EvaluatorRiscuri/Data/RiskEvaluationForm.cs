@@ -534,7 +534,7 @@ namespace EvaluatorRiscuri.Data
         {
             {
                 DATA_OPERATIONS_EVALUATION,
-                "Evaluarea riscului S.I. –privind operaţiile centrate pe date"
+                "Evaluarea riscului S.I. – privind operaţiile centrate pe date"
             },
             {
                 APPLICATIONS_SYSTEM_CREATION_EVALUATION,
@@ -542,10 +542,10 @@ namespace EvaluatorRiscuri.Data
             },
             {
                 APPLICATIONS_SYSTEM_DEVELOPMENT_EVALUATION,
-                "Evaluarea  riscului –privind dezvoltarea sistemului de aplicaţii" },
+                "Evaluarea  riscului – privind dezvoltarea sistemului de aplicaţii" },
             {
                 HUMAN_MATERIALS_RESOURCES_EVALUATION,
-                "Evaluarea riscurilor –privind obţinerea resurselor umane şi materiale" },
+                "Evaluarea riscurilor – privind obţinerea resurselor umane şi materiale" },
             {
                 SOFTWARE_ACQUISITION_EVALUATION,
                 "Evaluarea riscurilor privind achiziţiile de soft" },

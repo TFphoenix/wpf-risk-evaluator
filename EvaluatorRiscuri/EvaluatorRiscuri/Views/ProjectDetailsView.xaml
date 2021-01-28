@@ -59,7 +59,62 @@
                 <TextBlock VerticalAlignment="Center" Grid.Column="0" Style="{StaticResource MaterialDesignHeadline6TextBlock}">Detalii proiect</TextBlock>
             </Grid>
 
-            <!--TODO: Project Details-->
+            <!--Project Details-->
+            <Grid Grid.Row="1" Margin="20 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <!--General Info-->
+                <TextBox x:Name="NameTextBox" Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="Nume" FontSize="15" FontWeight="Bold">Acesta este un nume</TextBox>
+
+                <TextBox x:Name="CreatedDateTextBox" Grid.Column="1" Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="Creat" FontSize="15" FontWeight="Bold">29/01/2021</TextBox>
+
+                <TextBox x:Name="EvaluatedDateTextBox" Grid.Column="2" Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="Evaluat" FontSize="15" FontWeight="Bold">29/01/2021</TextBox>
+
+                <TextBox x:Name="DescriptionTextBox" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Top" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="Descriere" FontSize="15">Aceasta este o descriere</TextBox>
+
+                <!--Risk Scores Info-->
+                <TextBox x:Name="DataOperationsRiskScoreTextBox" Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="operaţii centrate pe date" FontSize="15">95</TextBox>
+
+                <TextBox x:Name="ApplicationsSystemCreationRiskScoreTextBox" Grid.Column="1" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="crearea sistemului de aplicaţii" FontSize="15">95</TextBox>
+
+                <TextBox x:Name="ApplicationsSystemDevelopmentRiskScoreTextBox" Grid.Column="2" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="dezvoltarea sistemului de aplicaţii" FontSize="15">95</TextBox>
+
+                <TextBox x:Name="HumanMaterialsResourcesRiskScoreTextBox" Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="obţinerea resurselor umane şi materiale" FontSize="15">95</TextBox>
+
+                <TextBox x:Name="SoftwareAcquisitionRiskScoreTextBox" Grid.Column="1" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="achiziţiile de soft" FontSize="15">95</TextBox>
+
+                <TextBox x:Name="OtherFunctionsRiskScoreTextBox" Grid.Column="2" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         Margin="5" VerticalAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                         materialDesign:HintAssist.Hint="alte funcţii ale sistemelor informatice" FontSize="15">95</TextBox>
+            </Grid>
 
         </Grid>
     </Grid>
