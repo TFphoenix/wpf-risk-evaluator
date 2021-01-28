@@ -10,7 +10,7 @@ namespace EvaluatorRiscuri.Data
     public static class RiskEvaluationForm
     {
         // Evaluations
-        public static List<FormItem> DATA_OPERATIONS_EVALUATION = new List<FormItem>
+        public static readonly List<FormItem> DATA_OPERATIONS_EVALUATION = new List<FormItem>
         {
             new FormItem{
                 Question = "Număr de personal implicat în operaţii cu date:",
@@ -102,7 +102,7 @@ namespace EvaluatorRiscuri.Data
                 }},
         };
 
-        public static List<FormItem> APPLICATIONS_SYSTEM_CREATION_EVALUATION = new List<FormItem>
+        public static readonly List<FormItem> APPLICATIONS_SYSTEM_CREATION_EVALUATION = new List<FormItem>
         {
             new FormItem{
                 Question = "Efectul cedării sistemului (punctul critic):",
@@ -194,7 +194,7 @@ namespace EvaluatorRiscuri.Data
                 }},
         };
 
-        public static List<FormItem> APPLICATIONS_SYSTEM_DEVELOPMENT_EVALUATION = new List<FormItem>
+        public static readonly List<FormItem> APPLICATIONS_SYSTEM_DEVELOPMENT_EVALUATION = new List<FormItem>
         {
             new FormItem{
                 Question = "Dimensiunea, organizarea şi experienţa echipei de lucru:",
@@ -286,7 +286,7 @@ namespace EvaluatorRiscuri.Data
                 }},
         };
 
-        public static List<FormItem> HUMAN_MATERIALS_RESOURCES_EVALUATION = new List<FormItem>
+        public static readonly List<FormItem> HUMAN_MATERIALS_RESOURCES_EVALUATION = new List<FormItem>
         {
             new FormItem{
                 Question = "Efect:",
@@ -345,7 +345,7 @@ namespace EvaluatorRiscuri.Data
                 }},
         };
 
-        public static List<FormItem> SOFTWARE_ACQUISITION_EVALUATION = new List<FormItem>
+        public static readonly List<FormItem> SOFTWARE_ACQUISITION_EVALUATION = new List<FormItem>
         {
             new FormItem{
                 Question = "Scopul sistemului:",
@@ -437,7 +437,7 @@ namespace EvaluatorRiscuri.Data
                 }},
         };
 
-        public static List<FormItem> OTHER_FUNCTIONS_EVALUATION = new List<FormItem>
+        public static readonly List<FormItem> OTHER_FUNCTIONS_EVALUATION = new List<FormItem>
         {
             new FormItem{
                 Question = "Efectul eşecului unei funcţii:",
@@ -530,7 +530,7 @@ namespace EvaluatorRiscuri.Data
         };
 
         // Names
-        public static Dictionary<List<FormItem>, string> EVALUATION_NAMES = new Dictionary<List<FormItem>, string>
+        public static readonly Dictionary<List<FormItem>, string> EVALUATION_NAMES = new Dictionary<List<FormItem>, string>
         {
             {
                 DATA_OPERATIONS_EVALUATION,
