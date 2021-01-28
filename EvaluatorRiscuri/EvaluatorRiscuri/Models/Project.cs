@@ -9,8 +9,9 @@ namespace EvaluatorRiscuri.Models
     public class Project : Model
     {
         public string Name { get; set; }
+        public string Description { get; set; }
         public int ProjectManager { get; set; }
         public string CreatedDate { get; set; }
-        public string Description { get; set; }
+        public string LastEvaluatedDate { get; set; }
     }
 }
