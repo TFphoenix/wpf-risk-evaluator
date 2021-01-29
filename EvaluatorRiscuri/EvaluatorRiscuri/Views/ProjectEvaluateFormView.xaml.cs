@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EvaluatorRiscuri.Data;
 
 namespace EvaluatorRiscuri.Views
 {
@@ -35,10 +36,12 @@ namespace EvaluatorRiscuri.Views
             if (true == (bool)e.NewValue)
             {
                 // Get parameters
+                string evaluationName = _shell.ProjectData.SelectedEvaluationName;
                 var project = _shell.ProjectData.SelectedProject;
 
                 // Set form data
-                TitleTextBlock.Text = _shell.ProjectData.SelectedEvaluationName;
+                TitleTextBlock.Text = evaluationName;
+                FormList.ItemsSource = RiskEvaluationForm.EVALUATION_NAMES[evaluationName];
             }
             // On disappearing
             else
@@ -49,6 +52,11 @@ namespace EvaluatorRiscuri.Views
         private void Back_OnClick(object sender, RoutedEventArgs e)
         {
             _shell.GoTo(Shell.PROJECT_EVALUATE_VIEW);
+        }
+
+        private void RankBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
+        {
+            //throw new NotImplementedException();
         }
     }
 }

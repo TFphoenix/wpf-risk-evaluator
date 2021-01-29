@@ -64,8 +64,47 @@
                 </Button>
             </Grid>
 
-            <!--TODO: Evaluate Project Form-->
-
+            <!--Form List-->
+            <Border Grid.Row="1">
+                <ListView x:Name="FormList" SelectionMode="Single" Background="Transparent" Width="Auto">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel CanHorizontallyScroll="True" CanVerticallyScroll="False" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <!--Question Card-->
+                            <GroupBox Header="{Binding Question}" Margin="10">
+                                <WrapPanel>
+                                    <materialDesign:RatingBar
+                                        Orientation="Vertical"
+                                        Value="0" Max="5" ValueChanged="RankBar_ValueChanged" />
+                                    <StackPanel>
+                                        <Label Content="{Binding Options[0]}"/>
+                                        <Label Content="{Binding Options[1]}"/>
+                                        <Label Content="{Binding Options[2]}"/>
+                                        <Label Content="{Binding Options[3]}"/>
+                                        <Label Content="{Binding Options[4]}"/>
+                                    </StackPanel>
+                                </WrapPanel>
+                            </GroupBox>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Border>
         </Grid>
     </Grid>
 </UserControl>
