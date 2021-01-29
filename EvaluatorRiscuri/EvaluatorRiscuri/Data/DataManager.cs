@@ -36,13 +36,13 @@ namespace EvaluatorRiscuri.Data
             Save();
         }
 
-        private void Save()
+        protected void Save()
         {
             var jsonString = JsonSerializer.Serialize(DataSet);
             File.WriteAllText(JsonPath, jsonString);
         }
 
-        private void Load()
+        protected void Load()
         {
             var jsonString = File.ReadAllText(JsonPath);
             DataSet = JsonSerializer.Deserialize<List<T>>(jsonString);

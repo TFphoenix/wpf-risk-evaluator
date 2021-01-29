@@ -530,30 +530,38 @@ namespace EvaluatorRiscuri.Data
         };
 
         // Names
+        public const string DATA_OPERATIONS_NAME = "Evaluarea riscului S.I. – privind operaţiile centrate pe date";
+        public const string APPLICATIONS_SYSTEM_CREATION_NAME = "Evaluarea riscului privind crearea sistemului de aplicaţii";
+        public const string APPLICATIONS_SYSTEM_DEVELOPMENT_NAME = "Evaluarea riscului – privind dezvoltarea sistemului de aplicaţii";
+        public const string HUMAN_MATERIALS_RESOURCES_NAME = "Evaluarea riscurilor – privind obţinerea resurselor umane şi materiale";
+        public const string SOFTWARE_ACQUISITION_NAME = "Evaluarea riscurilor privind achiziţiile de soft";
+        public const string OTHER_FUNCTIONS_NAME = "Evaluarea riscului privind alte funcţii ale sistemelor informatice";
+
+        // Name-Evaluations Dictionary
         public static readonly Dictionary<string, List<FormItem>> EVALUATION_NAMES = new Dictionary<string, List<FormItem>>
         {
             {
-                "Evaluarea riscului S.I. – privind operaţiile centrate pe date",
+                DATA_OPERATIONS_NAME,
                 DATA_OPERATIONS_EVALUATION
             },
             {
-                "Evaluarea riscului privind crearea sistemului de aplicaţii",
+                APPLICATIONS_SYSTEM_CREATION_NAME,
                 APPLICATIONS_SYSTEM_CREATION_EVALUATION
             },
             {
-                "Evaluarea riscului – privind dezvoltarea sistemului de aplicaţii",
+                APPLICATIONS_SYSTEM_DEVELOPMENT_NAME,
                 APPLICATIONS_SYSTEM_DEVELOPMENT_EVALUATION
             },
             {
-                "Evaluarea riscurilor – privind obţinerea resurselor umane şi materiale",
+                HUMAN_MATERIALS_RESOURCES_NAME,
                 HUMAN_MATERIALS_RESOURCES_EVALUATION
             },
             {
-                "Evaluarea riscurilor privind achiziţiile de soft",
+                SOFTWARE_ACQUISITION_NAME,
                 SOFTWARE_ACQUISITION_EVALUATION
             },
             {
-                "Evaluarea riscului privind alte funcţii ale sistemelor informatice",
+                OTHER_FUNCTIONS_NAME,
                 OTHER_FUNCTIONS_EVALUATION
             }
         };

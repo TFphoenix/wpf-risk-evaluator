@@ -44,6 +44,7 @@
         <Grid Grid.Row="1" Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
@@ -55,17 +56,27 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock x:Name="TitleTextBlock" VerticalAlignment="Center" Grid.Column="0" Style="{StaticResource MaterialDesignHeadline6TextBlock}"/>
-                <Button Grid.Column="2" Style="{StaticResource MaterialDesignRaisedButton}" Margin="10 0 0 0" HorizontalAlignment="Left" Height="35" ToolTip="Evaluează">
-                    <WrapPanel>
-                        <materialDesign:PackIcon Kind="Check" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
-                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluează</Label>
-                    </WrapPanel>
-                </Button>
+                <TextBlock x:Name="TitleTextBlock" VerticalAlignment="Center" Grid.Column="0" FontWeight="Bold" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"/>
+
+                <WrapPanel Grid.Column="2">
+                    <Button x:Name="ResetButton" Click="Reset_OnClick" IsEnabled="False" Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="10 0 0 0" HorizontalAlignment="Left" Height="35" ToolTip="Resetează evaluare">
+                        <materialDesign:PackIcon Kind="Undo" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                    </Button>
+                    <Button x:Name="EvaluateButton" Click="Evaluate_OnClick" Style="{StaticResource MaterialDesignRaisedButton}" Margin="10 0 0 0" HorizontalAlignment="Left" Height="35" ToolTip="Evaluează">
+                        <WrapPanel>
+                            <materialDesign:PackIcon Kind="Check" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                            <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluează</Label>
+                        </WrapPanel>
+                    </Button>
+                </WrapPanel>
             </Grid>
 
+            <!--Messages Bar-->
+            <Label Grid.Row="1" x:Name="ErrorLabel" HorizontalAlignment="Center" FontSize="12" Foreground="DarkRed" FontWeight="Bold" Visibility="Hidden">Eroare: Nu toate câmpurile au fost completate</Label>
+            <Label Grid.Row="1" x:Name="SuccessLabel" HorizontalAlignment="Center" FontSize="12" Foreground="DarkGreen" FontWeight="Bold" Visibility="Hidden">Proiect evaluat cu succes!</Label>
+
             <!--Form List-->
-            <Border Grid.Row="1">
+            <Border Grid.Row="2">
                 <ListView x:Name="FormList" SelectionMode="Single" Background="Transparent" Width="Auto">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -76,18 +87,24 @@
                         <DataTemplate>
                             <!--Question Card-->
                             <GroupBox Header="{Binding Question}" Margin="10">
-                                <WrapPanel>
-                                    <materialDesign:RatingBar
-                                        Orientation="Vertical"
-                                        Value="0" Max="5" ValueChanged="RankBar_ValueChanged" />
-                                    <StackPanel>
-                                        <Label Content="{Binding Options[0]}"/>
-                                        <Label Content="{Binding Options[1]}"/>
-                                        <Label Content="{Binding Options[2]}"/>
-                                        <Label Content="{Binding Options[3]}"/>
-                                        <Label Content="{Binding Options[4]}"/>
-                                    </StackPanel>
-                                </WrapPanel>
+                                <StackPanel>
+                                    <WrapPanel>
+                                        <materialDesign:RatingBar
+                                            Orientation="Vertical"
+                                            Value="0" Max="5" ValueChanged="RankBar_ValueChanged" />
+                                        <StackPanel>
+                                            <Label Content="{Binding Options[0]}"/>
+                                            <Label Content="{Binding Options[1]}"/>
+                                            <Label Content="{Binding Options[2]}"/>
+                                            <Label Content="{Binding Options[3]}"/>
+                                            <Label Content="{Binding Options[4]}"/>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                    <WrapPanel>
+                                        <Label FontStyle="Italic">Pondere:</Label>
+                                        <Label FontStyle="Italic" Content="{Binding Weight}"/>
+                                    </WrapPanel>
+                                </StackPanel>
                             </GroupBox>
                         </DataTemplate>
                     </ListView.ItemTemplate>
