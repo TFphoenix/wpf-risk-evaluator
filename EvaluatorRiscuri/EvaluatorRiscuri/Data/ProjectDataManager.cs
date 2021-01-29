@@ -11,6 +11,7 @@ namespace EvaluatorRiscuri.Data
     public sealed class ProjectDataManager : DataManager<Project>
     {
         public Project SelectedProject { get; set; }
+        public string SelectedEvaluationName { get; set; }
 
         static ProjectDataManager()
         {

@@ -530,28 +530,32 @@ namespace EvaluatorRiscuri.Data
         };
 
         // Names
-        public static readonly Dictionary<List<FormItem>, string> EVALUATION_NAMES = new Dictionary<List<FormItem>, string>
+        public static readonly Dictionary<string, List<FormItem>> EVALUATION_NAMES = new Dictionary<string, List<FormItem>>
         {
             {
-                DATA_OPERATIONS_EVALUATION,
-                "Evaluarea riscului S.I. – privind operaţiile centrate pe date"
+                "Evaluarea riscului S.I. – privind operaţiile centrate pe date",
+                DATA_OPERATIONS_EVALUATION
             },
             {
-                APPLICATIONS_SYSTEM_CREATION_EVALUATION,
-                "Evaluarea riscului privind crearea sistemului de aplicaţii"
+                "Evaluarea riscului privind crearea sistemului de aplicaţii",
+                APPLICATIONS_SYSTEM_CREATION_EVALUATION
             },
             {
-                APPLICATIONS_SYSTEM_DEVELOPMENT_EVALUATION,
-                "Evaluarea  riscului – privind dezvoltarea sistemului de aplicaţii" },
+                "Evaluarea riscului – privind dezvoltarea sistemului de aplicaţii",
+                APPLICATIONS_SYSTEM_DEVELOPMENT_EVALUATION
+            },
             {
-                HUMAN_MATERIALS_RESOURCES_EVALUATION,
-                "Evaluarea riscurilor – privind obţinerea resurselor umane şi materiale" },
+                "Evaluarea riscurilor – privind obţinerea resurselor umane şi materiale",
+                HUMAN_MATERIALS_RESOURCES_EVALUATION
+            },
             {
-                SOFTWARE_ACQUISITION_EVALUATION,
-                "Evaluarea riscurilor privind achiziţiile de soft" },
+                "Evaluarea riscurilor privind achiziţiile de soft",
+                SOFTWARE_ACQUISITION_EVALUATION
+            },
             {
-                OTHER_FUNCTIONS_EVALUATION,
-                "Evaluarea riscului privind alte funcţii ale sistemelor informatice" }
+                "Evaluarea riscului privind alte funcţii ale sistemelor informatice",
+                OTHER_FUNCTIONS_EVALUATION
+            }
         };
     }
 }

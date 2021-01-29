@@ -27,6 +27,7 @@ namespace EvaluatorRiscuri
         public const string MENU_VIEW = "Menu";
         public const string PROJECT_ADD_VIEW = "ProjectAdd";
         public const string PROJECT_EVALUATE_VIEW = "ProjectEvaluate";
+        public const string PROJECT_EVALUATE_FORM_VIEW = "ProjectEvaluateFormView";
         public const string PROJECT_DETAILS_VIEW = "ProjectDetails";
 
         // Views
@@ -100,6 +101,7 @@ namespace EvaluatorRiscuri
                 {MENU_VIEW, MenuView},
                 {PROJECT_ADD_VIEW, ProjectAddView},
                 {PROJECT_EVALUATE_VIEW, ProjectEvaluateView},
+                {PROJECT_EVALUATE_FORM_VIEW, ProjectEvaluateFormView},
                 {PROJECT_DETAILS_VIEW, ProjectDetailsView}
             };
         }

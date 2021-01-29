@@ -54,6 +54,16 @@ namespace EvaluatorRiscuri.Views
             // On disappearing
             else
             {
+                NameTextBox.Text = "";
+                CreatedDateTextBox.Text = "";
+                DescriptionTextBox.Text = "";
+                EvaluatedDateTextBox.Text = "";
+                DataOperationsRiskScoreTextBox.Text = "";
+                ApplicationsSystemCreationRiskScoreTextBox.Text = "";
+                ApplicationsSystemDevelopmentRiskScoreTextBox.Text = "";
+                HumanMaterialsResourcesRiskScoreTextBox.Text = "";
+                SoftwareAcquisitionRiskScoreTextBox.Text = "";
+                OtherFunctionsRiskScoreTextBox.Text = "";
             }
         }
 

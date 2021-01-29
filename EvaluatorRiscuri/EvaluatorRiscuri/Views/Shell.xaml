@@ -14,6 +14,7 @@
         <views:MenuView x:Name="MenuView" IsEnabled="False" Visibility="Hidden"/>
         <views:ProjectAddView x:Name="ProjectAddView" IsEnabled="False" Visibility="Hidden"/>
         <views:ProjectEvaluateView x:Name="ProjectEvaluateView" IsEnabled="False" Visibility="Hidden"/>
+        <views:ProjectEvaluateFormView x:Name="ProjectEvaluateFormView" IsEnabled="False" Visibility="Hidden"/>
         <views:ProjectDetailsView x:Name="ProjectDetailsView" IsEnabled="False" Visibility="Hidden"/>
     </Grid>
 </Window>

@@ -12,18 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using EvaluatorRiscuri.Data;
 
 namespace EvaluatorRiscuri.Views
 {
     /// <summary>
-    /// Interaction logic for ProjectEvaluateView.xaml
+    /// Interaction logic for ProjectEvaluateFormView.xaml
     /// </summary>
-    public partial class ProjectEvaluateView : UserControl
+    public partial class ProjectEvaluateFormView : UserControl
     {
         private readonly Shell _shell;
 
-        public ProjectEvaluateView()
+        public ProjectEvaluateFormView()
         {
             InitializeComponent();
             _shell = (Shell)Application.Current.MainWindow;
@@ -35,8 +34,11 @@ namespace EvaluatorRiscuri.Views
             // On appearing
             if (true == (bool)e.NewValue)
             {
-                // Get project
+                // Get parameters
                 var project = _shell.ProjectData.SelectedProject;
+
+                // Set form data
+                TitleTextBlock.Text = _shell.ProjectData.SelectedEvaluationName;
             }
             // On disappearing
             else
@@ -46,19 +48,7 @@ namespace EvaluatorRiscuri.Views
 
         private void Back_OnClick(object sender, RoutedEventArgs e)
         {
-            _shell.GoTo(Shell.MENU_VIEW);
-        }
-
-        private void Evaluate_OnClick(object sender, RoutedEventArgs e)
-        {
-            var buttonLabel = ((sender as Button)?.Content as WrapPanel)?.Children[1] as Label;
-            if (null == buttonLabel) throw new NullReferenceException("Wrong evaluate button format");
-
-            string evaluationName = buttonLabel.Content as string;
-            if (string.IsNullOrEmpty(evaluationName) || !RiskEvaluationForm.EVALUATION_NAMES.ContainsKey(evaluationName)) throw new ArgumentException("Invalid evaluation name");
-
-            _shell.ProjectData.SelectedEvaluationName = evaluationName;
-            _shell.GoTo(Shell.PROJECT_EVALUATE_FORM_VIEW);
+            _shell.GoTo(Shell.PROJECT_EVALUATE_VIEW);
         }
     }
 }

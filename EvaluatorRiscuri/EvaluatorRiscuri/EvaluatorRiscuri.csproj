@@ -110,6 +110,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ProjectEvaluateFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ProjectEvaluateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +149,9 @@
     </Compile>
     <Compile Include="Views\ProjectDetailsView.xaml.cs">
       <DependentUpon>ProjectDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectEvaluateFormView.xaml.cs">
+      <DependentUpon>ProjectEvaluateFormView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProjectEvaluateView.xaml.cs">
       <DependentUpon>ProjectEvaluateView.xaml</DependentUpon>

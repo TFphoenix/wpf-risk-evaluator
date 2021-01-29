@@ -57,15 +57,54 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock VerticalAlignment="Center" Grid.Column="0" Style="{StaticResource MaterialDesignHeadline6TextBlock}">Evaluează proiect</TextBlock>
-                <Button Grid.Column="2" Style="{StaticResource MaterialDesignRaisedButton}" Margin="10 0 0 0" HorizontalAlignment="Left" Height="35" ToolTip="Adaugă">
-                    <WrapPanel>
-                        <materialDesign:PackIcon Kind="Plus" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
-                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Adaugă</Label>
-                    </WrapPanel>
-                </Button>
             </Grid>
 
-            <!--TODO: Evaluate Project Form-->
+            <!--Evaluate Project Menu-->
+            <StackPanel Grid.Row="1" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                        CanVerticallyScroll="True" CanHorizontallyScroll="False">
+
+                <Button Click="Evaluate_OnClick" Style="{StaticResource MaterialDesignRaisedButton}" Height="35" ToolTip="Evaluează" Margin="10">
+                    <WrapPanel HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="FileCheck" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluarea riscului S.I. – privind operaţiile centrate pe date</Label>
+                    </WrapPanel>
+                </Button>
+
+                <Button Click="Evaluate_OnClick" Style="{StaticResource MaterialDesignRaisedButton}" Height="35" ToolTip="Evaluează" Margin="10">
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="FileCheck" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluarea riscului privind crearea sistemului de aplicaţii</Label>
+                    </WrapPanel>
+                </Button>
+
+                <Button Click="Evaluate_OnClick" Style="{StaticResource MaterialDesignRaisedButton}" Height="35" ToolTip="Evaluează" Margin="10">
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="FileCheck" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluarea  riscului – privind dezvoltarea sistemului de aplicaţii</Label>
+                    </WrapPanel>
+                </Button>
+
+                <Button Click="Evaluate_OnClick" Style="{StaticResource MaterialDesignRaisedButton}" Height="35" ToolTip="Evaluează" Margin="10">
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="FileCheck" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluarea riscurilor – privind obţinerea resurselor umane şi materiale</Label>
+                    </WrapPanel>
+                </Button>
+
+                <Button Click="Evaluate_OnClick" Style="{StaticResource MaterialDesignRaisedButton}" Height="35" ToolTip="Evaluează" Margin="10">
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="FileCheck" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluarea riscurilor privind achiziţiile de soft</Label>
+                    </WrapPanel>
+                </Button>
+
+                <Button Click="Evaluate_OnClick" Style="{StaticResource MaterialDesignRaisedButton}" Height="35" ToolTip="Evaluează" Margin="10">
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="FileCheck" Foreground="{DynamicResource MaterialDesignDarkForeground}" Width="20" Height="20" VerticalAlignment="Center"/>
+                        <Label Foreground="{DynamicResource MaterialDesignDarkForeground}">Evaluarea riscului privind alte funcţii ale sistemelor informatice</Label>
+                    </WrapPanel>
+                </Button>
+            </StackPanel>
 
         </Grid>
     </Grid>
